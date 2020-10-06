@@ -11,10 +11,20 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-nav,
+nav {
+  padding: 20px;
+}
+
 main,
 section {
-  padding: 20px;
+  padding: 20px 0;
+}
+
+@media only screen and (min-width: 375px) {
+  main,
+  section {
+    padding: 20px;
+  }
 }
 
 aside {
@@ -90,7 +100,7 @@ nav .desk-menu {
             flex-direction: row;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
-            justify-content: end;
+            justify-content: flex-end;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -171,12 +181,18 @@ section[role=startpage] {
 }
 
 aside[role=startpage] {
+  margin-bottom: 10px;
   text-align: center;
-  padding: 20px;
-  margin: 10px;
+  padding: 20px 0;
   display: -ms-grid;
   display: grid;
   justify-items: center;
+}
+
+@media only screen and (min-width: 600px) {
+  aside[role=startpage] {
+    padding: 20px;
+  }
 }
 
 aside[role=startpage] div {
@@ -186,10 +202,15 @@ aside[role=startpage] div {
       align-self: center;
 }
 
+aside[role=startpage] div p {
+  margin: 3px;
+}
+
 @media only screen and (min-width: 600px) {
   aside[role=startpage] {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
+    margin: 10px;
   }
   aside[role=startpage] img {
     width: 100%;
