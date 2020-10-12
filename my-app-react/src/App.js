@@ -1,12 +1,12 @@
 import React from 'react';
+import Startpage from './view/Startpage'
 
 import './App.css';
+import PlayerView from './view/PlayerView';
 
 function App() {
   return (
-    <div className="App">
-      My Appm
-    </div>
+    <PlayerView />
   );
 }
 
