@@ -1,13 +1,18 @@
 import React from 'react';
-import Startpage from './view/Startpage'
+
+import Nav from './components/NavigationBar/Navigation';
+import Routing from './routes/Routing';
 
 import './App.css';
-import PlayerView from './view/PlayerView';
+
+
 
 function App() {
   return (
-    <PlayerView />
-  );
+    <Routing>
+      <Nav></Nav>
+    </Routing>
+    );
 }
 
 export default App;
