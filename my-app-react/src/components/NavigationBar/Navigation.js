@@ -6,8 +6,11 @@ const Navigation = () => {
     return (
         <nav>
             <ul>
-                <li onClick={() => history.push("/")}>Home</li>
-                <li onClick={() => history.push("/player")}>Log in</li>      
+                <li onClick={() => history.push("/login")}>Long in</li>
+                <li onClick={() => history.push("/team")}>Teams</li>
+                <li onClick={() => history.push("/player")}>Player</li>
+                <li onClick={() => history.push("/search")}>Search</li> 
+                <li onClick={() => history.push("/")}>Home</li>      
            </ul>
         </nav>
     )

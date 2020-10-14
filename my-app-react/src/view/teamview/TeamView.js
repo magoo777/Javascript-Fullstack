@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Performance = () => {
+const TeamView = () => {
     return (
         <div>
-            performance
+            Teamssss
         </div>
     )
 }
 
-export default Performance
+export default TeamView
