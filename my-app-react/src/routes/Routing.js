@@ -12,9 +12,8 @@ function Routing(props) {
             <Switch>
                 <Route exact path="/" component={Startpage} />
                 <Route exact path="/login" component={LoginView} />
-                <Route exact path="/" component={PlayerView} />
                 <Route exact path="/team" component={TeamView} />
-                <Route exact path="/player" component={PlayerView} />               
+                <Route exact path="/player" component={PlayerView} />
             </Switch>
         </Router>
     )
