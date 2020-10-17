@@ -14,4 +14,8 @@ nav ul {
   list-style-type: none;
   background: pink;
 }
+
+nav ul li {
+  cursor: pointer;
+}
 /*# sourceMappingURL=navigation.css.map */

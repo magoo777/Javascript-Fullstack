@@ -7,4 +7,8 @@ nav ul{
     align-items: center;
     list-style-type: none;
     background: pink;
+   
+    & li {
+        cursor: pointer;
+    }
 }
