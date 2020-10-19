@@ -2,16 +2,13 @@ import React from 'react';
 
 // Player Components
 import PlayerComp from '../../components/PlayerComp/Player';
-import Overview from '../../components/PlayerOverviewComp/Overview';
-import Performance from '../../components/PlayerPerfComp/Performance';
+
 
 function PlayerView() {
     return (
-        <div>
+        <main>
             <PlayerComp />
-            <Overview />
-            <Performance />
-        </div>
+        </main>
     )
 }
 

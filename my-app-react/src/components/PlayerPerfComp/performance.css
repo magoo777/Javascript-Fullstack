@@ -1,1 +1,14 @@
-/* No CSS *//*# sourceMappingURL=performance.css.map */
+.playerPerformance {
+  background: blueviolet;
+  -ms-grid-row: 3;
+  grid-row: 3;
+}
+
+.notActive {
+  height: 30px;
+}
+
+.active {
+  height: 300px;
+}
+/*# sourceMappingURL=performance.css.map */

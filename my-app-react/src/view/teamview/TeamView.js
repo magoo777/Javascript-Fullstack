@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
 
 const TeamView = () => {
     return (
-        <div>
+        <main>
             Teamssss
-        </div>
+        </main>
+
+
     )
 }
 

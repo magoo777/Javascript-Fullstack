@@ -1,1 +1,7 @@
-/* No CSS *//*# sourceMappingURL=overview.css.map */
+.overview {
+  -ms-grid-row: 2;
+  grid-row: 2;
+  background-color: white;
+  height: 300px;
+}
+/*# sourceMappingURL=overview.css.map */

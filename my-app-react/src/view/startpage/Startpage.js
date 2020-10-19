@@ -1,7 +1,8 @@
 import { cleanup } from '@testing-library/react';
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
-function Startpage() {
+
+function StartPage() {
 
     const [random, setRandom] = useState();
 
@@ -13,13 +14,14 @@ function Startpage() {
         }
 
 
-    }, [])
+    }, [random])
 
     return (
-        <div>
+        <main>
             startpage
-        </div>
+        </main>
+
     )
 }
 
-export default Startpage
+export default StartPage

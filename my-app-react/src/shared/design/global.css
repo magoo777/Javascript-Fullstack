@@ -8,4 +8,9 @@ body {
   margin: 0 auto;
   padding: 0;
 }
+
+main {
+  padding: 10px 20px;
+  text-align: center;
+}
 /*# sourceMappingURL=global.css.map */
