@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 // import CSS for navigation
@@ -9,20 +9,43 @@ import { FiLogIn } from "react-icons/fi";
 
 const Navigation = () => {
     const history = useHistory()
+    const userName = localStorage.getItem('userName');
 
     const login = () => {
-        const userName = localStorage.getItem('userName');
 
         if (userName) {
-            return `Hello, ${userName} Log out`
+            return (
+                <>
+                    <p>Hello. {userName}</p>
+                    <span onClick={() => logOut()}>Log out</span>
+                </>
+            )
         } else {
-            return <FiLogIn />
-        }
+            return (<>
+                <FiLogIn /> <span>Log in</span>
+            </>
+            )
 
+        }
 
     }
 
+    const logOut = () => {
 
+        alert(userName + "Has logged out");
+        history.push("/");
+        localStorage.removeItem('userName');
+    }
+
+    const [random, setRandom] = useState(localStorage.getItem('userName'));
+
+    // useEffect(() => {
+    //     if (!userName) {
+    //         console.log("Log out")
+
+    //     }
+
+    // }, [random])
 
     return (
         <nav>

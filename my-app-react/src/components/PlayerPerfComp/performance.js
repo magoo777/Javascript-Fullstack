@@ -10,7 +10,7 @@ const Performance = () => {
 
     return (
         <div className="playerPerformance" >
-            <h2>Performance</h2>
+            <p>Kanske visa data med hjälp av d3 react....</p>
         </div>
     )
 }

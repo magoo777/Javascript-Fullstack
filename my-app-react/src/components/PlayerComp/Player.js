@@ -11,9 +11,6 @@ import noplayerimg from '../../shared/images/noplayerimg.png';
 
 const Player = () => {
 
-    const active = () => {
-        alert('klicked')
-    }
 
     return (
         <section className="playerComp">
@@ -21,9 +18,24 @@ const Player = () => {
                 <h2>Player Name</h2>
                 <img src={noplayerimg} alt="Football player" />
             </div>
+            <div className="accordian-holder">
+                <div>
+                    <input type="radio" checked name="myaccordian" id="Applications" />
+                    <label for="Applications">Overview</label>
+                    <div className="inside-container">
+                        <Overview />
+                    </div>
+                </div>
+                <div>
+                    <input type="radio" name="myaccordian" id="Functions" />
+                    <label className="performanceAcc" for="Functions">Performance</label>
+                    <div className="inside-container backgroundColor">
+                        <Performance />
+                    </div>
+                </div>
+            </div>
 
-            <Overview />
-            <Performance />
+
         </section>
     )
 }

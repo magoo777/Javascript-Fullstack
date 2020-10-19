@@ -1,14 +1,8 @@
 .playerPerformance {
-  background: blueviolet;
-  -ms-grid-row: 3;
-  grid-row: 3;
+  background: #302d5f;
 }
 
-.notActive {
-  height: 30px;
-}
-
-.active {
-  height: 300px;
+.playerPerformance p {
+  color: white;
 }
 /*# sourceMappingURL=performance.css.map */

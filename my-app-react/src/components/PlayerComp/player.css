@@ -1,12 +1,66 @@
 .playerComp {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (min-content)[7] 1fr (min-content)[3];
-      grid-template-rows: repeat(7, -webkit-min-content) 1fr repeat(3, -webkit-min-content);
-      grid-template-rows: repeat(7, min-content) 1fr repeat(3, min-content);
+  -ms-grid-rows: 1fr auto auto;
+      grid-template-rows: 1fr auto auto;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
+}
+
+.accordian-holder {
+  width: 100%;
+  min-width: 600px;
+  margin: 30px auto;
+}
+
+.accordian-holder input {
+  display: none;
+}
+
+.accordian-holder label {
+  display: block;
+  position: relative;
+  padding: 10px;
+  cursor: pointer;
+  background: #fff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border: 5px solid #fff;
+}
+
+.performanceAcc {
+  color: white;
+  position: absolute;
+  background-color: #302d5f !important;
+  border: 5px solid #302d5f !important;
+}
+
+.backgroundColor {
+  background: #302d5f !important;
+}
+
+.inside-container {
+  display: block;
+  height: 0px;
+  background: #fff;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.accordian-holder input:checked ~ .inside-container {
+  height: 280px;
+}
+
+.accordian-holder label::after {
+  content: "...";
+  width: 10px;
+  position: absolute;
+  right: 15px;
+  top: -5px;
+  font-size: 25px;
+  font-weight: bold;
 }
 /*# sourceMappingURL=player.css.map */
