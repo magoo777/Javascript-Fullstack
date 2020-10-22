@@ -1,23 +1,27 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { UserContext } from '../../shared/context/UserContext'
 
 // import CSS for navigation
 import './navigation.css';
 
 import { FaSearch } from 'react-icons/fa';
-import { FiLogIn } from "react-icons/fi";
+import { FiLogIn, FiLogOut } from "react-icons/fi";
 
 const Navigation = () => {
+
+    const [loggedInUser, setLoggedinUser] = useContext(UserContext)
+
     const history = useHistory()
-    const userName = localStorage.getItem('userName');
+
 
     const login = () => {
 
-        if (userName) {
+        if (loggedInUser) {
             return (
                 <>
-                    <p>Hello. {userName}</p>
-                    <span onClick={() => logOut()}>Log out</span>
+                    <p className="login_user">Hello. {loggedInUser}</p>
+                    <span className="logout_user" onClick={() => logOut()}><FiLogOut className="logout__btn" /> Log out</span>
                 </>
             )
         } else {
@@ -32,20 +36,15 @@ const Navigation = () => {
 
     const logOut = () => {
 
-        alert(userName + "Has logged out");
-        history.push("/");
+        // alert(userName + "Has logged out");
+        setLoggedinUser("");
         localStorage.removeItem('userName');
+        localStorage.removeItem('passWord');
+        history.push("/");
+
     }
 
-    const [random, setRandom] = useState(localStorage.getItem('userName'));
 
-    // useEffect(() => {
-    //     if (!userName) {
-    //         console.log("Log out")
-
-    //     }
-
-    // }, [random])
 
     return (
         <nav>
@@ -55,10 +54,11 @@ const Navigation = () => {
                 <li onClick={() => history.push("/player")}>Player</li>
 
                 <li onClick={() => history.push("/")}>Home</li>
-                <li onClick={() => history.push("/search")}><FaSearch /></li>
+                <li><FaSearch /></li>
             </ul>
         </nav>
     )
 }
 
 export default Navigation
+

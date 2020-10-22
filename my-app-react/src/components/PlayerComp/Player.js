@@ -20,15 +20,15 @@ const Player = () => {
             </div>
             <div className="accordian-holder">
                 <div>
-                    <input type="radio" checked name="myaccordian" id="Applications" />
-                    <label for="Applications">Overview</label>
+                    <input type="radio" checked={true} name="myaccordian" id="Applications" />
+                    <label htmlFor="Applications">Overview</label>
                     <div className="inside-container">
                         <Overview />
                     </div>
                 </div>
                 <div>
                     <input type="radio" name="myaccordian" id="Functions" />
-                    <label className="performanceAcc" for="Functions">Performance</label>
+                    <label className="performanceAcc" htmlFor="Functions">Performance</label>
                     <div className="inside-container backgroundColor">
                         <Performance />
                     </div>

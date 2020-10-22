@@ -3,7 +3,10 @@ import React from 'react';
 const TeamView = () => {
     return (
         <main>
-            Teamssss
+            <h2>Manchester United</h2>
+            <p>Lorem ipsum dolor sit amet.. </p>
+
+
         </main>
 
 

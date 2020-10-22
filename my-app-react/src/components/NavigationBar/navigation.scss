@@ -12,3 +12,21 @@ nav ul{
         cursor: pointer;
     }
 }
+
+.login_user {
+    margin: 0;
+}
+
+.logout_user{
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: lightgray;
+    padding: 3px 10px;
+}
+
+.logout__btn {
+   position: relative;
+   top: 2px;
+
+}
