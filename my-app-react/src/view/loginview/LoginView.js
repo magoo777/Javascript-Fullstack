@@ -15,15 +15,15 @@ const LoginView = () => {
         // alert(loginEmail + "Has logged in");
         setLoggedinUser(loginEmail)
 
-        localStorage.setItem('userName', loginEmail);
-        localStorage.setItem('passWord', loginPassword);
+        // localStorage.setItem('localUser', loginEmail);
+        // localStorage.setItem('localPass', loginPassword);
         history.push("/");
     }
 
 
     return (
         <main>
-            {loggedInUser}
+
             <p>Log in</p>
             Email:<input onChange={e => setLoginEmail(e.target.value)}></input><br />
             Passw:<input onChange={e => setLoginPassword(e.target.value)}></input><br />

@@ -1,18 +1,26 @@
-nav ul{
+nav {
+
+    background: pink;
+
+    & ul{
     display: flex;
     height: 50px;
-    margin: 0;
+    max-width: 600px;
+    margin: 0 auto;
     padding: 0;
     justify-content: space-between;
     align-items: center;
     list-style-type: none;
-    background: pink;
+    
    
-    & li {
+    & li:not(:first-child) {
         cursor: pointer;
     }
+    & li:last-child {
+        cursor: default;
+    }
 }
-
+}
 .login_user {
     margin: 0;
 }
@@ -23,6 +31,7 @@ nav ul{
     font-weight: bold;
     background-color: lightgray;
     padding: 3px 10px;
+    cursor: pointer;
 }
 
 .logout__btn {

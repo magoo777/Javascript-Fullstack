@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useContext } from 'react'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { UserContext } from '../../shared/context/UserContext'
 
@@ -20,13 +20,15 @@ const Navigation = () => {
         if (loggedInUser) {
             return (
                 <>
-                    <p className="login_user">Hello. {loggedInUser}</p>
-                    <span className="logout_user" onClick={() => logOut()}><FiLogOut className="logout__btn" /> Log out</span>
+                    <li>
+                        <p className="login_user">Hello. {loggedInUser}</p>
+                        <span className="logout_user" onClick={() => logOut()}><FiLogOut className="logout__btn" /> Log out</span>
+                    </li>
                 </>
             )
         } else {
             return (<>
-                <FiLogIn /> <span>Log in</span>
+                <li onClick={() => history.push("/login")} style={{ cursor: "pointer" }}> <FiLogIn /> <span>Log in</span></li>
             </>
             )
 
@@ -49,7 +51,7 @@ const Navigation = () => {
     return (
         <nav>
             <ul>
-                <li onClick={() => history.push("/login")}>{login()}</li>
+                {login()}
                 <li onClick={() => history.push("/team")}>Teams</li>
                 <li onClick={() => history.push("/player")}>Player</li>
 

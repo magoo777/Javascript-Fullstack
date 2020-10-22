@@ -1,9 +1,14 @@
+nav {
+  background: pink;
+}
+
 nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   height: 50px;
-  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
   padding: 0;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -12,11 +17,14 @@ nav ul {
       -ms-flex-align: center;
           align-items: center;
   list-style-type: none;
-  background: pink;
 }
 
-nav ul li {
+nav ul li:not(:first-child) {
   cursor: pointer;
+}
+
+nav ul li:last-child {
+  cursor: default;
 }
 
 .login_user {
@@ -29,6 +37,7 @@ nav ul li {
   font-weight: bold;
   background-color: lightgray;
   padding: 3px 10px;
+  cursor: pointer;
 }
 
 .logout__btn {
