@@ -15,8 +15,8 @@ const LoginView = () => {
         // alert(loginEmail + "Has logged in");
         setLoggedinUser(loginEmail)
 
-        // localStorage.setItem('localUser', loginEmail);
-        // localStorage.setItem('localPass', loginPassword);
+        localStorage.setItem('localUser', loginEmail);
+        localStorage.setItem('localPass', loginPassword);
         history.push("/");
     }
 

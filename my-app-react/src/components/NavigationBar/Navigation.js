@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { UserContext } from '../../shared/context/UserContext'
 
@@ -36,12 +36,16 @@ const Navigation = () => {
 
     }
 
+    useEffect(() => {
+        setLoggedinUser(localStorage.getItem('localUser'))
+    })
+
     const logOut = () => {
 
         // alert(userName + "Has logged out");
         setLoggedinUser("");
-        localStorage.removeItem('userName');
-        localStorage.removeItem('passWord');
+        localStorage.removeItem('localUser');
+        localStorage.removeItem('localPass');
         history.push("/");
 
     }
