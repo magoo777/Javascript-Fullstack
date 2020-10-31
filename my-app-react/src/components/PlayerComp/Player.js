@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
+import Axios from 'axios'
+import PlayerService from '../../shared/api/service/PlayerService'
 
 // importerar komponenter
 import Overview from '../../components/PlayerOverviewComp/Overview';
@@ -9,13 +11,43 @@ import './player.css';
 // import Player img
 import noplayerimg from '../../shared/images/noplayerimg.png';
 
+
+
 const Player = () => {
 
+    const [data, setData] = useState()
+    const [player, setPlayer] = useState(1)
+
+// skapar en variabel för att spara data.
+var fetchPlayerData = () => {
+    // hämtar data från API
+    Axios.get(`https://swapi.dev/api/people/${player}`)
+    .then(({data}) => setData(data))
+    .catch((error) => console.log(error))
+}
+useEffect(() => {
+    fetchPlayerData()
+}, [player])
+console.log(player)
+const showPlayer = () => {
+    if(data) {
+        const {starships} = data 
+        return <>
+           <h2>{data.name}</h2> 
+           <h2>{starships[0]}</h2> 
+       </>
+    }
+}
 
     return (
+        
         <section className="playerComp">
+        <button onClick={()=>fetchPlayerData()}>Hämta API</button>
+                <button onClick={()=> setPlayer( player + 1 )}>Next player</button>
+                <button onClick={()=> console.log(data)}>Show state</button>
             <div>
-                <h2>Player Name</h2>
+                {showPlayer()}
+                
                 <img src={noplayerimg} alt="Football player" />
             </div>
             <div className="accordian-holder">
@@ -23,14 +55,14 @@ const Player = () => {
                     <input type="radio" checked={true} name="myaccordian" id="Applications" />
                     <label htmlFor="Applications">Overview</label>
                     <div className="inside-container">
-                        <Overview />
+                        <Overview {...data}/>
                     </div>
                 </div>
                 <div>
                     <input type="radio" name="myaccordian" id="Functions" />
                     <label className="performanceAcc" htmlFor="Functions">Performance</label>
                     <div className="inside-container backgroundColor">
-                        <Performance />
+                        <Performance {...data}/>
                     </div>
                 </div>
             </div>
