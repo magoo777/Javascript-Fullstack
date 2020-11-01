@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import Axios from 'axios'
-import PlayerService from '../../shared/api/service/PlayerService'
+
 
 // importerar komponenter
 import Overview from '../../components/PlayerOverviewComp/Overview';
@@ -42,9 +42,8 @@ const showPlayer = () => {
     return (
         
         <section className="playerComp">
-        <button onClick={()=>fetchPlayerData()}>Hämta API</button>
-                <button onClick={()=> setPlayer( player + 1 )}>Next player</button>
-                <button onClick={()=> console.log(data)}>Show state</button>
+        <button onClick={()=> setPlayer( player + 1 )}>Next player</button>
+ 
             <div>
                 {showPlayer()}
                 
