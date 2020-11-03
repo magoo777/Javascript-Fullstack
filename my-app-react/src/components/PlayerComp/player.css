@@ -24,27 +24,27 @@
   position: relative;
   padding: 10px;
   cursor: pointer;
-  background: #fff;
+  background: #C6BC82;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  border: 5px solid #fff;
+  border: 5px solid #C6BC82;
 }
 
 .performanceAcc {
   color: white;
   position: absolute;
-  background-color: #302d5f !important;
-  border: 5px solid #302d5f !important;
+  background-color: #3D432E !important;
+  border: 5px solid #3D432E !important;
 }
 
 .backgroundColor {
-  background: #302d5f !important;
+  background: #3D432E !important;
 }
 
 .inside-container {
   display: block;
   height: 0px;
-  background: #fff;
+  background: #C6BC82;
   overflow: hidden;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;

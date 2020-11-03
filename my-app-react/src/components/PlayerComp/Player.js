@@ -28,7 +28,7 @@ var fetchPlayerData = () => {
 useEffect(() => {
     fetchPlayerData()
 }, [player])
-console.log(player)
+// console.log(player)
 const showPlayer = () => {
     if(data) {
         const {starships} = data 

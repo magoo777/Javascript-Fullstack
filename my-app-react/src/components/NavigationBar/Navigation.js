@@ -3,8 +3,10 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { UserContext } from '../../shared/context/UserContext'
 
 // import CSS for navigation
-import './navigation.css';
 
+import NavStyle from './styleComp'
+
+//import NavStyle from './styleComp'
 import { FaSearch } from 'react-icons/fa';
 import { FiLogIn, FiLogOut } from "react-icons/fi";
 
@@ -16,7 +18,7 @@ const Navigation = () => {
 
 
     const login = () => {
-
+        
         if (loggedInUser) {
             return (
                 <>
@@ -53,6 +55,7 @@ const Navigation = () => {
 
 
     return (
+        <NavStyle >
         <nav>
             <ul>
                 {login()}
@@ -61,8 +64,10 @@ const Navigation = () => {
 
                 <li onClick={() => history.push("/")}>Home</li>
                 <li><FaSearch /></li>
+                
             </ul>
         </nav>
+        </NavStyle>
     )
 }
 
