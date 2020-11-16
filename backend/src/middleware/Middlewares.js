@@ -1,3 +1,8 @@
+import dotenv from 'dotenv'
+
+
+dotenv.config()
+
 const notFound = (req,res,next) => {
 	const error = new Error(`Not found: ${req.originalUrl} `)
 	res.status(404)
@@ -10,8 +15,8 @@ const errorHandler = (error, req, res, next) => {
 	res.json({
 		statuscode: statuscode,
 		message: error.message,
-		stacktrace: error.stack,
-	})
+		stacktrace: process.env.ENVIROMENT === 'PRODUCTION' ? 'Nice try' : error.stack,
+	})  
 }
 
 export default {

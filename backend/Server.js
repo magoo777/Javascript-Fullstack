@@ -1,29 +1,36 @@
 // const express = require('express');
-import express from 'express'
-import dotenv from 'dotenv'  // Hides
+import express from 'express' // framework for creating easier web/mob applications in node.js
+
 import helmet from 'helmet' // adds security to the headers
 import morgan from 'morgan' // log server events
+import bodyParser from 'body-parser' 
 import middlewares from './src/middleware/Middlewares.js'
+import Configuration from './configuration/Configuration.js'
+import UserRoutes from './src/routes/User.routes.js'
 
 
-dotenv.config()
 const app = express()
-const port = process.env.PORT
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
+
 
 app.use(helmet())
 app.use(morgan('common'))
 // app.use(isAuthenticated)
 
-app.get('/recipe', (req , res) => {
-	res.send('Pancakes')
+app.get('/team', isAuthenticated, (req , res) => {
+	res.send('My favorite team')
 })
 
-app.get('/user', isAuthenticated, (req , res) => {
-	// res.send('User')
+app.get('/player', (req , res) => {
+	res.send('Player info')
 })
 
+UserRoutes.routes(app)
 app.use(middlewares.notFound)
 app.use(middlewares.errorHandler)
+
+ 
 
 function isAuthenticated(req,res, next) {
 	req.query.admin === 'true' 
@@ -34,12 +41,8 @@ function isAuthenticated(req,res, next) {
 }
 
 
-
-app.listen(port, () => {
-	console.log(`Servern är igång på ${port}`)
-})
-
-
+Configuration.connectToDatabase()
+Configuration.connectToPort(app)
 
 
 
