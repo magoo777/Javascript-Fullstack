@@ -9,6 +9,7 @@ const createPlayer = async (req, res) => {
 		playerass: req.body.playerass,
 		playergoals: req.body.playergoals,
 		playermatches: req.body.playermatches,
+		playerimg: req.body.playerimg,
 	})
     
 	try {
@@ -64,6 +65,7 @@ const updatePlayer = async (req, res) => {
 			playerass: req.body.playerass,
 			playergoals: req.body.playergoals,
 			playermatches: req.body.playermatches,
+			playerimg: req.body.playerimg,
 		}, {new: true})
 		res.status(StatusCode.OK).send(response)
 	} catch (error) {

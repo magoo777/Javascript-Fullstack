@@ -8,6 +8,7 @@ const PlayerSchema = mongoose.Schema(
 		playerass: Number,
 		playergoals: Number,
 		playermatches: Number,
+		playerimg: String
 	}, { timestamps: true } // inbygd function i mongoose för datumvisning av händelser
 )
 
