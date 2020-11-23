@@ -23,7 +23,6 @@ const LoginView = () => {
 
     return (
         <main>
-
             <p>Log in</p>
             Email:<input onChange={e => setLoginEmail(e.target.value)}></input><br />
             Passw:<input onChange={e => setLoginPassword(e.target.value)}></input><br />
