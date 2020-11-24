@@ -6,7 +6,7 @@ const createUser = async (req, res) => {
 		username: req.body.username,
 		password: req.body.password
 	})
-    
+
 	try {
 		const response = await user.save()
 		res.status(StatusCode.CREATED).send(response)
@@ -20,8 +20,8 @@ const getAllUsers = async (req, res) => {
 	try {
 		const response = await UserModel.find()
 		res.status(StatusCode.OK).send(response)
-	} catch(error) {
-		res.status(StatusCode.INTERNAL_SERVER_ERROR).send({message: error.message})
+	} catch (error) {
+		res.status(StatusCode.INTERNAL_SERVER_ERROR).send({ message: error.message })
 	}
 }
 
@@ -30,18 +30,20 @@ const getUserWithId = async (req, res) => {
 		const response = await UserModel.findById(req.params.userId)
 		res.status(StatusCode.OK).send(response)
 	} catch (error) {
-		res.status(StatusCode.INTERNAL_SERVER_ERROR).send({message: 'Error while trying to get ID: ' + req.params.userId,
-			error: error.message })
+		res.status(StatusCode.INTERNAL_SERVER_ERROR).send({
+			message: 'Error while trying to get ID: ' + req.params.userId,
+			error: error.message
+		})
 	}
 }
 
 const getUserWithUsernameQuery = async (req, res) => {
 	try {
 		const response = await UserModel.find({ username: req.query.username })
-		response.length !== 0 
-			? res.status(StatusCode.OK).send(response) 
-			: res.status(StatusCode.NOT_FOUND).send({message: 'Could not find user: ' + req.query.username}) 
-		
+		response.length !== 0
+			? res.status(StatusCode.OK).send(response)
+			: res.status(StatusCode.NOT_FOUND).send({ message: 'Could not find user: ' + req.query.username })
+
 	} catch (error) {
 		res.status(StatusCode.INTERNAL_SERVER_ERROR).send({
 			message: 'Error while trying to recive username:' + req.query.userId,
@@ -52,11 +54,11 @@ const getUserWithUsernameQuery = async (req, res) => {
 
 const updateUser = async (req, res) => {
 	try {
-		if(!req.body) {return res.status(400).send({message: 'Cannot update empty values'})}
+		if (!req.body) { return res.status(400).send({ message: 'Cannot update empty values' }) }
 		const response = await UserModel.findByIdAndUpdate(req.params.userId, {
 			username: req.body.username,
 			password: req.body.password
-		}, {new: true})
+		}, { new: true })
 		res.status(StatusCode.OK).send(response)
 	} catch (error) {
 		res.status(StatusCode.INTERNAL_SERVER_ERROR).send({
@@ -74,7 +76,7 @@ const deleteUser = async (req, res) => {
 		})
 	} catch (error) {
 		res.status(StatusCode.INTERNAL_SERVER_ERROR).send({
-			message: 'Error occured while trying to delete user with the ID: ' +req.params.userId,
+			message: 'Error occured while trying to delete user with the ID: ' + req.params.userId,
 			error: error.message
 		})
 	}
