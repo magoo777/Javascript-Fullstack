@@ -6,8 +6,8 @@
   "scripts": {
     "test": "mocha 'tests/**'",
     "start": "nodemon server.js",
-    "build": "cd my-app-react && npm run build",
-    "install-my-app-react": "cd my-app-react && npm install",
+    "build": "../my-app-react && npm run build",
+    "install-my-app-react": "../my-app-react && npm install",
     "heroku-postbuild": "npm run install-my-app-react && npm run build"
   },
   "keywords": [
