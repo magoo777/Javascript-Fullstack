@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable indent */
 
 import express from 'express' // framework for creating easier web/mob applications in node.js
 import dotenv from 'dotenv'
@@ -22,8 +24,8 @@ app.use(helmet())
 app.use(morgan('common'))
 app.use(cors())
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('../build'))
+if (process.env.ENVIROMENT === 'production') {
+    app.use(express.static('../my-app-react'))
 }
 
 // app.get('/user', (req, res) => {
