@@ -4,10 +4,12 @@ import React from 'react';
 // importerar css för komponenten
 import './overview.css';
 
-const Overview = (props) => {
+const Overview = (props, playerNr) => {
 
     const { playerass, playergoals, playermatches } = props
-    console.log("detta är props:" + playerass);
+    const { testNr } = playerNr
+
+    console.log("detta är props:" + testNr);
     return (
         <div className="overview">
             <h3>Assists </h3><p> {playerass}</p>

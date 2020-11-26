@@ -8,8 +8,6 @@ import Performance from '../../components/PlayerPerfComp/Performance';
 
 // importerar css för komponenten
 import './player.css';
-// import Player img
-
 
 
 const Player = () => {
@@ -20,7 +18,6 @@ const Player = () => {
     // skapar en variabel för att spara data.
     var fetchPlayerData = () => {
         // hämtar data från API
-        //Axios.get(`http://localhost:3001/searchplayer?playernumber=${player}`)
         Axios.get(`http://localhost:3001/player`)
             .then(({ data }) => setData(data))
             .catch((error) => console.log(error))
@@ -30,8 +27,6 @@ const Player = () => {
         fetchPlayerData()
     }, [player])
 
-    console.log(player)
-
     const showPlayer = () => {
         if (data) {
             return <>
@@ -40,12 +35,24 @@ const Player = () => {
             </>
         }
     }
-    console.log(data)
+
+    const showPlayer2 = () => {
+        if (data) {
+            return <>
+                <h3>Assists </h3><p> {data[player].playerass}</p>
+                <h3>Goals </h3><p> {data[player].playergoals}</p>
+                <h3>Matches </h3><p> {data[player].playermatches}</p>
+            </>
+        }
+    }
+
     return (
 
         <section className="playerComp">
-            <button onClick={() => setPlayer(player + 1)}>Next player</button>
 
+            <button onClick={() => setPlayer(player + 1)}>Next player</button>
+            {console.log("data=" + data)}
+            {console.log("player=" + player)}
             <div>
                 {showPlayer()}
             </div>
@@ -54,8 +61,7 @@ const Player = () => {
                     <input type="radio" checked={true} name="myaccordian" id="Applications" />
                     <label htmlFor="Applications">Overview</label>
                     <div className="inside-container">
-                        <Overview {...data} />
-                        {console.log("Console log" + data)}
+                        {showPlayer2()}
                     </div>
                 </div>
                 <div>
