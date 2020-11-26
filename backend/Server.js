@@ -25,7 +25,7 @@ app.use(morgan('common'))
 app.use(cors())
 
 if (process.env.ENVIROMENT === 'production') {
-    app.use(express.static('../my-app-react'))
+    app.use(express.static('../../my-app-react'))
 }
 
 // app.get('/user', (req, res) => {
