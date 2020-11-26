@@ -6,13 +6,13 @@ import './overview.css';
 
 const Overview = (props) => {
 
-    const {height, mass, gender} = props
-
+    const { playerass, playergoals, playermatches } = props
+    console.log("detta är props:" + playerass);
     return (
         <div className="overview">
-            <h3>Assists (Height)</h3><p>7 {props.height}</p>
-            <h3>Goals (Mass)</h3><p>8 {props.mass}</p>
-            <h3>Matches (Gender)</h3><p>22 {props.gender}</p>
+            <h3>Assists </h3><p> {playerass}</p>
+            <h3>Goals </h3><p> {playergoals}</p>
+            <h3>Matches </h3><p> {playermatches}</p>
         </div>
     )
 }

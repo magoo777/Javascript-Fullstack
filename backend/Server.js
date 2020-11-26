@@ -6,7 +6,7 @@ import morgan from 'morgan' // log server events
 import bodyParser from 'body-parser'
 import Configuration from './configuration/Configuration.js'
 import middlewares from './src/middlewares/Middlewares.js'
-
+import cors from 'cors'
 //import UserRoutes from './src/routes/User.routes.js'
 import PlayerRoutes from './src/routes/Player.routes.js'
 import TeamRoutes from './src/routes/Team.routes.js'
@@ -20,7 +20,7 @@ app.use(bodyParser.json())
 
 app.use(helmet())
 app.use(morgan('common'))
-
+app.use(cors())
 
 // app.get('/user', (req, res) => {
 //     res.send('User info...')

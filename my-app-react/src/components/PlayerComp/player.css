@@ -12,7 +12,7 @@
 .accordian-holder {
   width: 100%;
   min-width: 600px;
-  margin: 30px auto;
+  margin: 0 auto;
 }
 
 .accordian-holder input {
@@ -33,12 +33,12 @@
 .performanceAcc {
   color: white;
   position: absolute;
-  background-color: #3D432E !important;
-  border: 5px solid #3D432E !important;
+  background-color: #C6BC82 !important;
+  border: 5px solid #C6BC82 !important;
 }
 
 .backgroundColor {
-  background: #3D432E !important;
+  background: #C6BC82 !important;
 }
 
 .inside-container {

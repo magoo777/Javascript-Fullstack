@@ -11,7 +11,7 @@ const createPlayer = async (req, res) => {
 		playermatches: req.body.playermatches,
 		playerimg: req.body.playerimg,
 	})
-    
+
 	try {
 		const response = await player.save()
 		res.status(StatusCode.CREATED).send(response)
@@ -25,8 +25,8 @@ const getAllPlayers = async (req, res) => {
 	try {
 		const response = await PlayerModel.find()
 		res.status(StatusCode.OK).send(response)
-	} catch(error) {
-		res.status(StatusCode.INTERNAL_SERVER_ERROR).send({message: error.message})
+	} catch (error) {
+		res.status(StatusCode.INTERNAL_SERVER_ERROR).send({ message: error.message })
 	}
 }
 
@@ -35,18 +35,20 @@ const getPlayerWithId = async (req, res) => {
 		const response = await PlayerModel.findById(req.params.playerId)
 		res.status(StatusCode.OK).send(response)
 	} catch (error) {
-		res.status(StatusCode.INTERNAL_SERVER_ERROR).send({message: 'Error while trying to get ID: ' + req.params.playerId,
-			error: error.message })
+		res.status(StatusCode.INTERNAL_SERVER_ERROR).send({
+			message: 'Error while trying to get ID: ' + req.params.playerId,
+			error: error.message
+		})
 	}
 }
 
 const getPlayerWithPlayernameQuery = async (req, res) => {
 	try {
-		const response = await PlayerModel.find({ playername: req.query.playername })
-		response.length !== 0 
-			? res.status(StatusCode.OK).send(response) 
-			: res.status(StatusCode.NOT_FOUND).send({message: 'Could not find player: ' + req.query.playername}) 
-		
+		const response = await PlayerModel.find({ playernumber: req.query.playernumber })
+		response.length !== 0
+			? res.status(StatusCode.OK).send(response)
+			: res.status(StatusCode.NOT_FOUND).send({ message: 'Could not find player: ' + req.query.playernumber })
+
 	} catch (error) {
 		res.status(StatusCode.INTERNAL_SERVER_ERROR).send({
 			message: 'Error while trying to recive playername:' + req.query.playerId,
@@ -57,7 +59,7 @@ const getPlayerWithPlayernameQuery = async (req, res) => {
 
 const updatePlayer = async (req, res) => {
 	try {
-		if(!req.body) {return res.status(400).send({message: 'Cannot update empty values'})}
+		if (!req.body) { return res.status(400).send({ message: 'Cannot update empty values' }) }
 		const response = await PlayerModel.findByIdAndUpdate(req.params.playerId, {
 			playername: req.body.playername,
 			playerteam: req.body.playerteam,
@@ -66,7 +68,7 @@ const updatePlayer = async (req, res) => {
 			playergoals: req.body.playergoals,
 			playermatches: req.body.playermatches,
 			playerimg: req.body.playerimg,
-		}, {new: true})
+		}, { new: true })
 		res.status(StatusCode.OK).send(response)
 	} catch (error) {
 		res.status(StatusCode.INTERNAL_SERVER_ERROR).send({
@@ -84,7 +86,7 @@ const deletePlayer = async (req, res) => {
 		})
 	} catch (error) {
 		res.status(StatusCode.INTERNAL_SERVER_ERROR).send({
-			message: 'Error occured while trying to delete user with the ID: ' +req.params.playerId,
+			message: 'Error occured while trying to delete user with the ID: ' + req.params.playerId,
 			error: error.message
 		})
 	}
