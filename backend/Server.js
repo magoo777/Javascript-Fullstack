@@ -22,6 +22,10 @@ app.use(helmet())
 app.use(morgan('common'))
 app.use(cors())
 
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('../build'))
+}
+
 // app.get('/user', (req, res) => {
 //     res.send('User info...')
 // })
