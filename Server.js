@@ -30,9 +30,11 @@ if (process.env.ENVIROMENT === 'PRODUCTION') {
 app.use(express.static('react-app/build'))
 //app.use(express.static('static'))
 
-// app.get('/user', (req, res) => {
-//     res.send('User info...')
-// })
+app.get("/", (req, res) => {
+    res
+        .set("Content-Security-Policy", "default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'")
+        .send("<html><head></head><body></body></html>");
+})
 
 // app.get('/player', (req, res) => {
 //     res.send('Playerinfo, goals, ass etc.')
