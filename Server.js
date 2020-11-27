@@ -27,7 +27,9 @@ app.use(cors())
 if (process.env.ENVIROMENT === 'PRODUCTION') {
     app.use(express.static('my-app-react/build'))
 }
-// app.use(express.static('static'))
+app.use(express.static('react-app/build'))
+//app.use(express.static('static'))
+
 // app.get('/user', (req, res) => {
 //     res.send('User info...')
 // })
