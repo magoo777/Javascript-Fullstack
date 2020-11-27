@@ -14,8 +14,6 @@ import PlayerRoutes from './src/routes/Player.routes.js'
 import TeamRoutes from './src/routes/Team.routes.js'
 
 
-
-dotenv.config()
 const app = express()
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
