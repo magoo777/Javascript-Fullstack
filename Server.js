@@ -30,13 +30,17 @@ if (process.env.ENVIROMENT === 'production') {
 app.use(express.static('my-app-react/build'))
 //app.use(express.static('static'))
 
-// app.get('/player', (req, res) => {
-//     res.send('Playerinfo, goals, ass etc.')
-// })
+app.get('/', (req, res) => {
+    res.send('Home...')
+})
 
-// app.get('/team', (req, res) => {
-//     res.send('Teams info, wins, loss etc.')
-// })
+app.get('/player', (req, res) => {
+    res.send('Playerinfo, goals, ass etc.')
+})
+
+app.get('/team', (req, res) => {
+    res.send('Teams info, wins, loss etc.')
+})
 
 //UserRoutes.routes(app)
 PlayerRoutes.routes(app)
