@@ -14,6 +14,8 @@ import PlayerRoutes from './src/routes/Player.routes.js'
 import TeamRoutes from './src/routes/Team.routes.js'
 
 
+
+dotenv.config()
 const app = express()
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
@@ -22,7 +24,7 @@ app.use(helmet())
 app.use(morgan('common'))
 app.use(cors())
 
-if (process.env.ENVIROMENT === 'PRODUCTION') {
+if (process.env.ENVIROMENT === 'production') {
     app.use(express.static('react-app/build'))
 }
 app.use(express.static('react-app/build'))
