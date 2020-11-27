@@ -7,7 +7,7 @@
     "test": "mocha 'tests/**'",
     "start": "node Server.js",
     "dev": "nodemon Server.js",
-    "build": "cd react-app && npm run build",
+    "build": "set INLINE_RUNTIME_CHUNK=false&&react-scripts build",
     "install-my-app-react": "cd react-app && npm install",
     "heroku-postbuild": "npm run install-my-app-react && npm run build"
   },
