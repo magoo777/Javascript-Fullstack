@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios'
 
+import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 
 // importerar komponenter
 import Overview from '../../components/PlayerOverviewComp/Overview';
@@ -23,18 +24,48 @@ const Player = () => {
             .catch((error) => console.log(error))
     }
 
+
+
+
+    const playerRight = () => {
+        setPlayer(player + 1)
+        setPlayer(player + 1)
+        if (player >= data.length - 1) {
+            setPlayer(0)
+        }
+
+    }
+    const playerLeft = () => {
+        console.log(player)
+        console.log(data.length);
+        setPlayer(player - 1)
+        if (player <= 0) {
+            setPlayer(data.length - 1)
+        }
+
+    }
+
     useEffect(() => {
-        fetchPlayerData()
+        fetchPlayerData();
     }, [player])
 
     const showPlayer = () => {
         if (data) {
             return <>
-                <h2>{data[player].playername}</h2>
-                <img src={data[player].playerimg} alt="Football player" />
+                <button onClick={() => playerLeft()}><FiArrowLeft /></button>
+                <div>
+                    <h2>{data[player].playername}</h2>
+                    <img src={data[player].playerimg} alt="Football player" /><br />
+                </div>
+                <button onClick={() => playerRight()}><FiArrowRight /></button>
+
             </>
         }
     }
+    console.log(data);
+    // let {...newPlayer} = data[0]
+    // console.log(newPlayer);
+
 
     const showPlayer2 = () => {
         if (data) {
@@ -43,18 +74,17 @@ const Player = () => {
                 <h3>Goals </h3><p> {data[player].playergoals}</p>
                 <h3>Matches </h3><p> {data[player].playermatches}</p>
             </>
+
         }
     }
+
 
     return (
 
         <section className="playerComp">
-
-            <button onClick={() => setPlayer(player + 1)}>Next player</button>
-            {console.log("data=" + data)}
-            {console.log("player=" + player)}
-            <div>
+            <div className="playerArea">
                 {showPlayer()}
+
             </div>
             <div className="accordian-holder">
                 <div>

@@ -1,7 +1,5 @@
 nav {
 
-    background: pink;
-
     & ul{
     display: flex;
     height: 50px;
@@ -11,6 +9,9 @@ nav {
     justify-content: space-between;
     align-items: center;
     list-style-type: none;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
     
    
     & li:not(:first-child) {

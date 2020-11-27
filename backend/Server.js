@@ -24,7 +24,7 @@ app.use(helmet())
 app.use(morgan('common'))
 app.use(cors())
 
-if (process.env.ENVIROMENT === 'production') {
+if (process.env.ENVIROMENT === 'PRODUCTION') {
     app.use(express.static('../../my-app-react'))
 }
 

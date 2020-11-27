@@ -59,4 +59,38 @@
     font-weight: bold;
 }
 
- 
+.playerArea {
+  display: grid;
+  grid-template-columns: 100px auto 100px;
+  justify-content: space-between;
+  align-items: center;
+
+  & button {
+    border: 1px solid #333;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 20px;
+    opacity: 0.5;
+
+    &:active {
+      border: 0;
+    }
+    &:focus {
+      border: 0;
+    }
+
+    &:hover {
+      background-color: lightgray;
+      opacity: 1;
+    }
+
+    & svg {
+      font-size: 2em;
+    }
+  }
+
+  & button:nth-of-type(2){
+    justify-self: end;
+  }
+} 

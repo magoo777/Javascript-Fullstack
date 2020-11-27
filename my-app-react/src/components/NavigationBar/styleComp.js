@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 const NavStyle = styled.nav`
-    nav {
-  background: pink;
+
+nav {
+  background-color: #eee;
 }
 
 nav ul {
@@ -20,6 +21,9 @@ nav ul {
       -ms-flex-align: center;
           align-items: center;
   list-style-type: none;
+  font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
 }
 
 nav ul li:not(:first-child) {
