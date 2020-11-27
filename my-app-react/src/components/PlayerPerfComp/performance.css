@@ -1,8 +1,12 @@
 .playerPerformance {
-  background: #302d5f;
+  background: #79734f;
 }
 
 .playerPerformance p {
   color: white;
+}
+
+.backgroundColor {
+  background: #79734f !important;
 }
 /*# sourceMappingURL=performance.css.map */

@@ -9,6 +9,9 @@
     width: 100%;
     min-width: 600px;
     margin: 0 auto;
+    background: #C6BC82;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
   }
 
   .accordian-holder input {
@@ -24,18 +27,18 @@
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border: 5px solid #C6BC82;
+    font-weight: bold;
+    text-transform: uppercase;
   }
 
   .performanceAcc {
       color: white;
     position: absolute;  
-    background-color: #C6BC82 !important;
-      border: 5px solid #C6BC82 !important;
+    background-color: #79734f !important;
+      border: 5px solid #79734f !important;
   }
 
-  .backgroundColor {
-      background: #C6BC82!important;
-  }
+  
 
   .inside-container {
     display: block;
@@ -43,6 +46,10 @@
     background: #C6BC82;
     overflow: hidden;
     transition: all 0.3s ease;
+    
+    & h3 {
+      font-size: 1em;
+    }
   }
 
   .accordian-holder input:checked~.inside-container {
@@ -53,7 +60,7 @@
     content: "...";
     width: 10px;
     position: absolute;
-    right: 15px;
+    right: 25px;
     top: -5px;
     font-size: 25px;
     font-weight: bold;
