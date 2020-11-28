@@ -28,7 +28,7 @@ app.use(cors())
 //     app.use(express.static('my-app-react/build'))
 // }
 // app.use(express.static('my-app-react/build'))
-app.use(express.static('react-app/build'))
+app.use(express.static('my-app-react/build'))
 
 // app.get('/', (req, res) => {
 //     res.send('Home...')
@@ -49,7 +49,7 @@ app.use(middlewares.notFound)
 app.use(middlewares.errorHandler)
 
 
-// Configuration.connectToDatabase()
+Configuration.connectToDatabase()
 Configuration.connectToPort(app)
 
 
