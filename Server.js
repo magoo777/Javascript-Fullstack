@@ -24,10 +24,10 @@ app.use(helmet())
 app.use(morgan('common'))
 app.use(cors())
 
-// if (process.env.ENVIROMENT === 'production') {
-app.use(express.static('test-app-react/build'))
+if (process.env.ENVIROMENT === 'production') {
+    app.use(express.static('my-app-react/build'))
 }
-app.use(express.static('test-app-react/build'))
+app.use(express.static('my-app-react/build'))
 // app.use(express.static('static'))
 
 // app.get('/', (req, res) => {
