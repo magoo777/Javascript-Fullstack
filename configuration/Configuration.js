@@ -4,8 +4,7 @@ import mongoose from 'mongoose'
 
 const connectToDatabase = async () => {
 	try {
-
-		await mongoose.connect(DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
+		await mongoose.connect('mongodb+srv://mats123:mats123>@test.33yny.mongodb.net/<dbname>?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
 		console.log('Connected to DB')
 	} catch (error) {
 		console.log('ERROR WHILE TRYING TO CONNECT TO THE DATABASE: ', error)
