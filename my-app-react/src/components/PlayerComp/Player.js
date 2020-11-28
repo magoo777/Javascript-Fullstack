@@ -55,7 +55,7 @@ const Player = () => {
                 <button onClick={() => playerLeft()}><FiArrowLeft /></button>
                 <div>
                     <h2>{data[player].playername}</h2>
-                    {/* <img src={data[player].playerimg} alt="Football player" /><br /> */}
+                    <img src={data[player].playerimg} alt="Football player" /><br />
                 </div>
                 <button onClick={() => playerRight()}><FiArrowRight /></button>
 

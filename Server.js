@@ -28,7 +28,7 @@ app.use(cors())
 //     app.use(express.static('my-app-react/build'))
 // }
 // app.use(express.static('my-app-react/build'))
-app.use(express.static('my-app-react/build'))
+app.use(express.static('test-app-react/build'))
 
 // app.get('/', (req, res) => {
 //     res.send('Home...')
