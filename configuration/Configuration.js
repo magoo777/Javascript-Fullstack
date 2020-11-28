@@ -7,8 +7,11 @@ dotenv.config()
 
 const connectToDatabase = async () => {
 	try {
-		const DB_URL = process.env.DATABASE_URL
-		await mongoose.connect('mongodb+srv://mats123:mats123@test.33yny.mongodb.net/<dbname>?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
+		await mongoose.connect(process.env.DATABASE_URL || 'mongodb://localhost/mats12345', {
+			useNewUrlParser: true,
+			useUnifiedTopology: true,
+			useFindAndModify: false
+		})
 		console.log('Connected to DB')
 	} catch (error) {
 		console.log('ERROR WHILE TRYING TO CONNECT TO THE DATABASE: ', error)
@@ -19,7 +22,7 @@ const connectToDatabase = async () => {
 const connectToPort = (app) => {
 	const port = process.env.PORT || 3001
 	app.listen(port, () => {
-		console.log(`Running on port: ${port}`)
+		console.log(`Running on porten: ${port}`)
 	})
 }
 

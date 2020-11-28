@@ -2,7 +2,7 @@
 /* eslint-disable indent */
 
 import express from 'express' // framework for creating easier web/mob applications in node.js
-import dotenv from 'dotenv'
+// import dotenv from 'dotenv'
 import helmet from 'helmet' // adds security to the headers
 import morgan from 'morgan' // log server events
 import bodyParser from 'body-parser'
@@ -15,7 +15,7 @@ import TeamRoutes from './src/routes/Team.routes.js'
 
 
 
-dotenv.config()
+// dotenv.config()
 const app = express()
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
@@ -27,7 +27,7 @@ app.use(cors())
 if (process.env.ENVIROMENT === 'production') {
     app.use(express.static('test-app-react/build'))
 }
-app.use(express.static('test-app-react/build'))
+//app.use(express.static('test-app-react/build'))
 // app.use(express.static('static'))
 
 // app.get('/', (req, res) => {
