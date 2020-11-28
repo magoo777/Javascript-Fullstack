@@ -49,7 +49,7 @@ app.use(middlewares.notFound)
 app.use(middlewares.errorHandler)
 
 
-// Configuration.connectToDatabase()
+Configuration.connectToDatabase()
 Configuration.connectToPort(app)
 
 

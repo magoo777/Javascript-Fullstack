@@ -24,6 +24,6 @@ const connectToPort = (app) => {
 }
 
 export default {
-	//	connectToDatabase,
+	connectToDatabase,
 	connectToPort
 }    
