@@ -24,23 +24,23 @@ app.use(helmet())
 app.use(morgan('common'))
 app.use(cors())
 
-if (process.env.ENVIROMENT === 'production') {
-    app.use(express.static('my-app-react/build'))
-}
-app.use(express.static('my-app-react/build'))
-//app.use(express.static('static'))
+// if (process.env.ENVIROMENT === 'production') {
+//     app.use(express.static('my-app-react/build'))
+// }
+// app.use(express.static('my-app-react/build'))
+app.use(express.static('react-app/build'))
 
-app.get('/', (req, res) => {
-    res.send('Home...')
-})
+// app.get('/', (req, res) => {
+//     res.send('Home...')
+// })
 
-app.get('/player', (req, res) => {
-    res.send('Playerinfo, goals, ass etc.')
-})
+// app.get('/player', (req, res) => {
+//     res.send('Playerinfo, goals, ass etc.')
+// })
 
-app.get('/team', (req, res) => {
-    res.send('Teams info, wins, loss etc.')
-})
+// app.get('/team', (req, res) => {
+//     res.send('Teams info, wins, loss etc.')
+// })
 
 //UserRoutes.routes(app)
 PlayerRoutes.routes(app)

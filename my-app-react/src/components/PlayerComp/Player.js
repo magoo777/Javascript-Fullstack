@@ -19,7 +19,7 @@ const Player = () => {
     // skapar en variabel för att spara data.
     var fetchPlayerData = () => {
         // hämtar data från API
-        Axios.get(`http://localhost:3001/player`)
+        Axios.get(`http://localhost:5000/player`)
             .then(({ data }) => setData(data))
             .catch((error) => console.log(error))
     }
