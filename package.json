@@ -9,7 +9,7 @@
     "dev": "nodemon Server.js",
     "build": "cd my-app-react && npm run build",
     "install-my-app-react": "cd my-app-react && npm install",
-    "heroku-postbuild": "npm run install-my-app-react && npm run build"
+    "heroku-postbuild": "npm run install-my-app-react npm run build"
   },
   "keywords": [
     "RestAPI",
