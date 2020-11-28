@@ -24,15 +24,15 @@ app.use(helmet())
 app.use(morgan('common'))
 app.use(cors())
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('test-app-react/build'))
-}
+// if (process.env.NODE_ENV === 'production') {
+//     app.use(express.static('test-app-react/build'))
+// }
 app.use(express.static('test-app-react/build'))
 // app.use(express.static('static'))
 
-app.get('/', (req, res) => {
-    res.send('Home...')
-})
+// app.get('/', (req, res) => {
+//     res.send('Home...')
+// })
 
 // app.get('/player', (req, res) => {
 //     res.send('Playerinfo, goals, ass etc.')
