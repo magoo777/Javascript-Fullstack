@@ -25,7 +25,7 @@ app.use(morgan('common'))
 app.use(cors())
 
 if (process.env.ENVIROMENT === 'production') {
-    app.use(express.static('test-app-react/build'))
+    app.use(express.static('static'))
 }
 //app.use(express.static('test-app-react/build'))
 // app.use(express.static('static'))
