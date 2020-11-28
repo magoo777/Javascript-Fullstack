@@ -2,7 +2,7 @@
 /* eslint-disable indent */
 
 import express from 'express' // framework for creating easier web/mob applications in node.js
-// import dotenv from 'dotenv'
+import dotenv from 'dotenv'
 import helmet from 'helmet' // adds security to the headers
 import morgan from 'morgan' // log server events
 import bodyParser from 'body-parser'
@@ -25,7 +25,7 @@ app.use(morgan('common'))
 app.use(cors())
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('test/static'))
+    app.use(express.static('test'))
 }
 // app.use(express.static('my-app-react'))
 // app.use(express.static('static'))
