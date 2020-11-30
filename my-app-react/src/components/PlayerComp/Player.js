@@ -4,7 +4,7 @@ import Axios from 'axios'
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 
 // importerar komponenter
-import Overview from '../../components/PlayerOverviewComp/Overview';
+//import Overview from '../../components/PlayerOverviewComp/Overview';
 import Performance from '../../components/PlayerPerfComp/Performance';
 
 // importerar css för komponenten
